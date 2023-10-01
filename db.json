@@ -1,0 +1,33 @@
+{
+   "tidsbestilling" : [
+      {
+        "produkt": "Vask & føntørring",
+        "hundenavn" : "Cleo",
+        "hunderace" : "Bokser",
+        "dato": "2024-04-23",
+        "tid" : "11:45",
+        "kundenavn": "Morten Bonderup",
+        "kundeadresse": "Ringvej Syd 104",
+        "postnr" : "8260",
+        "bynavn" : "Viby J",
+        "email": "moab@eaaa.dk",
+        "mobil": "72286339",
+        "notifikation" : true
+      },
+      {
+        "produkt": "Klip af negle",
+        "hundenavn" : "Buster",
+        "hunderace" : "Labrador",
+        "dato": "2024-06-16",
+        "tid" : "09:30",
+        "kundenavn": "Morten Bonderup",
+        "kundeadresse": "Ringvej Syd 104",
+        "postnr" : "8260",
+        "bynavn" : "Viby J",
+        "email": "moab@eaaa.dk",
+        "mobil": "72286339",
+        "notifikation": false
+      }
+    ]
+  }
+  

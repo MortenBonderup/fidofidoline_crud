@@ -2,7 +2,9 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Navigation from './components/Navigation'
 import MineTider from './pages/MineTider'
-import Tidsbestillingsside from './pages/Tidsbestillingsside'
+import Opretbestilling from './pages/Opretbestilling'
+import Opdaterbestilling from './pages/Opdaterbestilling'
+import Sletbestilling from './pages/Sletbestilling'
 
 function App() {
 
@@ -11,7 +13,9 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<MineTider />} />
-        <Route path="/tidsbestilling" element={<Tidsbestillingsside />} />
+        <Route path="/tidsbestilling" element={<Opretbestilling />} />
+        <Route path="/sletbestilling/:bestillingsId" element={<Sletbestilling />} />
+        <Route path="/bestilling/:bestillingsId" element={<Opdaterbestilling /> } />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </main>

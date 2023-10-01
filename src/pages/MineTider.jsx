@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 export default function MineTider() {
     const navigate = useNavigate();
-    const [posts, setPosts] = useState([]);
-    const [isPosts, setIsPosts] = useState(true);
+    const [bestillinger, setBestillinger] = useState([]);
+    const [isBestillinger, setIsBestillinger] = useState(true);
 
     function opretFunktion() {
         navigate("/tidsbestilling");
@@ -13,7 +13,7 @@ export default function MineTider() {
 
     useEffect(() => {
         async function getPosts() {
-            const url = "https://fidofidoline-default-rtdb.europe-west1.firebasedatabase.app/produkter.json";
+            const url = "https://fidofidoline-491b7-default-rtdb.europe-west1.firebasedatabase.app/tidsbestilling.json";
 
             const response = await fetch(url);
             const data = await response.json();
@@ -22,9 +22,9 @@ export default function MineTider() {
                     id: key,
                     ...data[key],
                 }));
-                setPosts(postsArray);
+                setBestillinger(postsArray);
             } else {
-                setIsPosts(false);
+                setIsBestillinger(false);
             }
         }
         getPosts();
@@ -37,10 +37,10 @@ export default function MineTider() {
                 <button type="button" style={{ backgroundColor: "green", color: "white", cursor: "pointer" }} onClick={opretFunktion}>+ Opret tidsbestilling</button>
             </div>
 
-            {isPosts ? (
+            {isBestillinger ? (
                 <div>
-                    {posts.map((post) => (
-                        <TidsbestillingsKort key={post.id} post={post} />
+                    {bestillinger.map((bestilling) => (
+                        <TidsbestillingsKort key={bestilling.id} bestilling={bestilling} />
                     ))}
                 </div>
             ) : (
