@@ -54,10 +54,6 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
         gemBestilling(formularData);
     }
 
-    function checkboksNotifikation() {
-        setNotifikation(!notifikation);
-    }
-
     function fortrydKlik() {
         navigate("/");
     }
@@ -118,7 +114,7 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
 
                     <div>
                         <label style={{ display: "block" }}>Dit mobilnummer</label><input type="text" name="mobil" value={mobil} onChange={e => setMobil(e.target.value)} />
-                        <input type="checkbox" name="notifikation" checked={notifikation} style={{ marginLeft: "10px" }} onChange={checkboksNotifikation} />SMS notifikation
+                        <input type="checkbox" name="notifikation" checked={notifikation} style={{ marginLeft: "10px" }} onChange={e => setNotifikation(e.target.checked)} />SMS notifikation
                     </div>
 
                     <div style={{ display: "flex", gap: "10px", justifyContent: "flex-end" }}>
@@ -130,3 +126,4 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
         </>
     )
 }
+

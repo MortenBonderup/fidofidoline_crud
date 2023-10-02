@@ -36,7 +36,6 @@ function fortrydKlik() {
     navigate("/");
 }
 
-
   return (
     <dialog open style={{marginTop: "40px", width: "40%"}}>
         <p>Slet tidsbestilling?</p>
