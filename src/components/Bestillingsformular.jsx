@@ -72,7 +72,7 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
                 <div style={{ display: "flex", gap: "20px", flexDirection: "column", maxWidth: "40%", float: "left" }}>
                 <div style={{color: "red"}}>{fejlmeddelelse}</div>
                     <label>Behandling</label>
-                    <select name="produkt" value={produkt} onChange={e => setProdukt(e.target.value)} style={{ marginTop: "-15px", width: "190px" }} >
+                    <select name="produkt" value={produkt} onChange={e => setProdukt(e.target.value)} style={{ marginTop: "-15px", width: "210px" }} >
                         <option>Vælg et produkt</option>
                         <option>Klip af negle</option>
                         <option>Klipning</option>
@@ -86,11 +86,11 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
                     </div>
 
                     <div>
-                        <label style={{ display: "block" }}>Hunderace</label><input type="text" name="hunderace" value={hunderace} onChange={e => setHunderace(e.target.value)} style={{ width: "185px" }} required />
+                        <label style={{ display: "block" }}>Hunderace</label><input type="text" name="hunderace" value={hunderace} onChange={e => setHunderace(e.target.value)} style={{ width: "200px" }} required />
                     </div>
 
                     <div>
-                        <label style={{ display: "block" }}>Hundens navn</label><input type="text" value={hundenavn} onChange={e => setHundenavn(e.target.value)} style={{ width: "185px" }} name="hundenavn" required />
+                        <label style={{ display: "block" }}>Hundens navn</label><input type="text" value={hundenavn} onChange={e => setHundenavn(e.target.value)} style={{ width: "200px" }} name="hundenavn" required />
                     </div>
 
                 </div> {/* Første kolonne slut */}
@@ -111,7 +111,7 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
                         </div>
                         <div style={{ display: "flex", flexDirection: "column" }}>
                             <label>By</label>
-                            <input type="text" name="bynavn" value={bynavn} onChange={e => setBynavn(e.target.value)} style={{ width: "195px" }} required/>
+                            <input type="text" name="bynavn" value={bynavn} onChange={e => setBynavn(e.target.value)} style={{ width: "187px" }} required/>
                         </div>
                     </div>
 
