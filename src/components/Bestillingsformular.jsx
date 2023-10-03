@@ -71,7 +71,7 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
             <form onSubmit={formsend}>
                 <div style={{ display: "flex", gap: "20px", flexDirection: "column", maxWidth: "40%", float: "left" }}>
                 <div style={{color: "red"}}>{fejlmeddelelse}</div>
-                    <label>Behandling</label>
+                    <label style={{ marginTop: "-20px"}}>Behandling</label>
                     <select name="produkt" value={produkt} onChange={e => setProdukt(e.target.value)} style={{ marginTop: "-15px", width: "210px" }} >
                         <option>Vælg et produkt</option>
                         <option>Klip af negle</option>
