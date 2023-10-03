@@ -15,11 +15,13 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
     const [mobil, setMobil] = useState("");
     const [notifikation, setNotifikation] = useState(false);
     const [fejlmeddelelse, setFejlmeddelelse] = useState("");
+    const [sidetitel, setSidetitel] = useState("Opret tid til behandling");
 
     const navigate = useNavigate();
 
     useEffect(() => {
         if (bestilling) {
+            setSidetitel("Opdater tidsbestilling");
             setProdukt(bestilling.produkt);
             setDato(bestilling.dato);
             setTid(bestilling.tid);
@@ -66,7 +68,7 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
 
     return (
         <>
-            <h2>Opret tid til behandling</h2>
+            <h2>{sidetitel}</h2>
 
             <form onSubmit={formsend}>
                 <div style={{ display: "flex", gap: "20px", flexDirection: "column", maxWidth: "40%", float: "left" }}>
