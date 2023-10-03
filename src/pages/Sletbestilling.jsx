@@ -19,8 +19,7 @@ export default function Tidsbestillingsside() {
   }, [url]);
 
 
-  async function sletBestilling(e) {
-    e.preventDefault();
+  async function sletBestilling() {
 
     const response = await fetch(url, {
         method: "DELETE"
@@ -39,11 +38,11 @@ function fortrydKlik() {
   return (
     <dialog open style={{marginTop: "40px", width: "40%"}}>
         <p>Slet tidsbestilling?</p>
-        <form method="dialog" onSubmit={sletBestilling}>
+        <form method="dialog">
             Ønsker du at slette tidsbestillingen for {bestilling.hundenavn}, {bestilling.produkt}, den {bestilling.dato} {bestilling.tid}?
             <div style={{display: "flex", justifyContent: "flex-end", marginTop: "20px", gap: "20px"}}>
                 <button type="button" onClick={fortrydKlik}>Fortryd</button>
-                <button type="submit">Slet</button>
+                <button type="button" onClick={sletBestilling}>Slet</button>
             </div>
         </form>
   </dialog>
