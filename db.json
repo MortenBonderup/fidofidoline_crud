@@ -1,6 +1,6 @@
 {
-   "tidsbestilling" : [
-      {
+   "tidsbestilling" : {
+      "0": {
         "produkt": "Vask & føntørring",
         "hundenavn" : "Cleo",
         "hunderace" : "Bokser",
@@ -14,7 +14,7 @@
         "mobil": "72286339",
         "notifikation" : true
       },
-      {
+      "1": {
         "produkt": "Klip af negle",
         "hundenavn" : "Buster",
         "hunderace" : "Labrador",
@@ -28,6 +28,6 @@
         "mobil": "72286339",
         "notifikation": false
       }
-    ]
+   }
   }
   
