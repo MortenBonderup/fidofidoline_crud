@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Bestillingsformular({gemBestilling, bestilling}) {
-    const [produkt, setProdukt] = useState("");
-    const [dato, setDato] = useState("");
-    const [tid, setTid] = useState(""); 
+    const [produkt, setProdukt] = useState("Vælg et produkt");
+    const [dato, setDato] = useState("2023-01-11");
+    const [tid, setTid] = useState("00:00"); 
     const [hundenavn, setHundenavn] = useState("");
     const [hunderace, setHunderace] = useState("");
     const [kundenavn, setKundenavn] = useState("");
@@ -14,6 +14,7 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
     const [email, setEmail] = useState("");
     const [mobil, setMobil] = useState("");
     const [notifikation, setNotifikation] = useState(false);
+    const [fejlmeddelelse, setFejlmeddelelse] = useState("");
 
     const navigate = useNavigate();
 
@@ -36,6 +37,8 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
 
     async function formsend(e) {
         e.preventDefault();
+
+        if (produkt !== "Vælg et produkt") {
         const formularData = {
             produkt: produkt,
             dato: dato,
@@ -52,6 +55,9 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
         }
 
         gemBestilling(formularData);
+    } else {
+        setFejlmeddelelse("Vælg et produkt")
+    }
     }
 
     function fortrydKlik() {
@@ -64,6 +70,7 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
 
             <form onSubmit={formsend}>
                 <div style={{ display: "flex", gap: "20px", flexDirection: "column", maxWidth: "40%", float: "left" }}>
+                <div style={{color: "red"}}>{fejlmeddelelse}</div>
                     <label>Behandling</label>
                     <select name="produkt" value={produkt} onChange={e => setProdukt(e.target.value)} style={{ marginTop: "-15px", width: "190px" }} >
                         <option>Vælg et produkt</option>
@@ -73,7 +80,7 @@ export default function Bestillingsformular({gemBestilling, bestilling}) {
                         <option>Ørepleje</option>
                         <option>Trimning</option>
                     </select>
-
+                    
                     <div>
                         <label style={{ display: "block" }}>Dato og tid</label><input type="date" name="dato" value={dato} onChange={e => setDato(e.target.value)} required/>&nbsp;<input type="time" value={tid} onChange={e => setTid(e.target.value)} name="tid" required />
                     </div>
